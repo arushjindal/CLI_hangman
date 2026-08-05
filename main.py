@@ -2,7 +2,6 @@ import os
 import subprocess
 import random
 
-
 words = [
     "ability", "academy", "account", "achieve", "acoustic", "activity",
     "adventure", "airplane", "alphabet", "amazing", "analysis", "ancient",
@@ -92,7 +91,6 @@ def check_compw():
 def draw_hangman():
     print(diag)
 
-
 def edit_hangman():
     global wroguel
     global diag
@@ -113,12 +111,6 @@ def edit_hangman():
     if wroguel == 0:
         diag = diag[0:hangman_index] + ("\\") + diag[hangman_index + 1:]
 
-
-
-    
-
-
-
 def word_display():
     print("\nYour Word:")
     for letter in word:
@@ -128,19 +120,15 @@ def word_display():
             print(letter , end = " ")
     print("\n")
 
-
 def letters_available():
     print("Letters Available: ")
     for letter in availletters:
         print(letter + " ", end = "")
     print("\n")
 
-
-
 def clear_screen():
     command = "cls" if os.name == "nt" else "clear"
     subprocess.run(command, shell=True, check=False)
-
 
 def gameitr():
     global wroguel
@@ -157,8 +145,6 @@ def gameitr():
         guess = input("Enter your Letter: ")
         if guess in availletters:   
                 availletters.remove(guess)
-
-
         if guess in word:
             prev_guessresult = "Right Guess!!"
             if check_compw() == True:
